@@ -9,3 +9,17 @@
 [Leetcode239.滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
 
 
+
+12.12
+
+[LCR183.望远镜中最高的海拔](https://leetcode.cn/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/description/)
+
+[Leetcode1438.绝对差不超过限制的最长连续子数组](https://leetcode.cn/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/)
+
+[LeetCode20.有效的括号](https://leetcode.cn/problems/valid-parentheses/description/)
+
+[LeetCode42.接雨水](https://leetcode.cn/problems/trapping-rain-water/)
+
+[LeetCode155.最小栈](https://leetcode.cn/problems/min-stack/description/)
+
+[LeetCode287.寻找重复数](https://leetcode.cn/problems/find-the-duplicate-number/description/)
