@@ -38,7 +38,7 @@ public:
             {
                 // 去除栈顶元素
                 int cur = stk.top();
-                stk.pop();
+                stk.pop();           // 这里pop出去是可以的，下次加的时候是会*(r-l-1)的，会加上这一部分
 
                 if(stk.empty()) break;
 
