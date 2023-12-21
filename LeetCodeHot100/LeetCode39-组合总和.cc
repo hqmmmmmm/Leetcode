@@ -1,38 +1,30 @@
 class Solution {
 public:
-    vector<int> path;
     vector<vector<int>> res;
-    int target;
-    int n;
+    vector<int> path;
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        this->n = candidates.size(), this->target = target;
-        dfs(0, 0, candidates);
+        dfs(0, 0, candidates, target);
         return res;
     }
 
-    void dfs(int u, int s, vector<int> &nums)
+    void dfs(int startIndex, int sum, vector<int>& candidates, int target)
     {
-        if(s == target) 
+        if(sum == target)
         {
             res.push_back(path);
-            return ;
+            return;
         }
-        if(u == n || s > target) 
+        if(sum > target || startIndex >= candidates.size())
             return;
 
-        path.push_back(nums[u]);
-        dfs(u, s + nums[u], nums);
-        path.pop_back();
-
-        dfs(u + 1, s, nums);
+        // 这种dfs相当于在枚举path的当前位置选取哪一个数字！！
+        // 之前我理解的那种dfs相当于在枚举待选集合中的某个数字选还是不选。
+        for(int i = startIndex; i < candidates.size(); ++i)  
+        {
+            path.push_back(candidates[i]);
+            dfs(i, sum + candidates[i], candidates, target);
+            path.pop_back();
+        }
     }
 };
-
-/*
-
-
-
-
-
-*/
