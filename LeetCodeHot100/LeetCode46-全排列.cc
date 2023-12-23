@@ -1,34 +1,32 @@
 class Solution {
 public:
     vector<vector<int>> res;
-    int n;
-    vector<int> path; 
-    vector<int> st;
-    
+    vector<int> path;
+    vector<int> used;
+
     vector<vector<int>> permute(vector<int>& nums) {
-        n = nums.size();
-        path = vector<int>(n, 0);
-        st = vector<int>(n, 0);
-        dfs(0, nums);
+        used.resize(nums.size(), 0);
+        dfs(nums);
         return res;
     }
 
-    void dfs(int u, vector<int> &nums)
+    void dfs(vector<int> &nums)
     {
-        if(u == n)
+        if(path.size() == nums.size())
         {
             res.push_back(path);
-            return ;
+            return;
         }
 
-        for(int i = 0; i < n; ++i)
+        for(int i = 0; i < nums.size(); ++i)
         {
-            if(!st[i])
+            if(!used[i])
             {
-                st[i] = 1;
-                path[u] = nums[i];
-                dfs(u + 1, nums);
-                st[i] = 0;
+                path.push_back(nums[i]);
+                used[i] = 1;
+                dfs(nums);
+                path.pop_back();
+                used[i] = 0;
             }
         }
     }
