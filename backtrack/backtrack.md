@@ -15,8 +15,10 @@ startIndex 表示从 startIndex 开始选取 或者 从startIndex与startIndex+1
 
 
 回溯中的去重问题：
-    同一层相同的数字只用一次（用第一个），使用unordered_set方法记录本层出现的数字。（感觉这个方法是最通用的）
-    特殊情况可以用used去重方法和startIndex去重方法。
+    同一层相同的数字只用一次（用第一个），使用unordered_set方法记录本层出现的数字。（感觉这个方法是最通用的,注意这种方法在组合问题/子集问题中好像也要先排序）
+    
+    还可以用used去重方法和startIndex去重方法。
+
 
 
 
